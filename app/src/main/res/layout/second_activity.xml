@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="65dp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:padding="38dp" />
+
+    <TextView
+        android:id="@+id/invisibleText"
+        android:layout_width="155dp"
+        android:layout_height="75dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="85dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="GOOD JOB!"
+        android:textSize="25dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/looser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="315dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="LOOSER"
+        android:textColor="#FD0000"
+        android:textSize="55dp" />
+
+
+</RelativeLayout>
