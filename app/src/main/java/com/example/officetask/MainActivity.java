@@ -25,10 +25,7 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
 
         Button btn = (Button) findViewById(R.id.btnSearch);
-
-
         btn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 String enteredText = editText.getText().toString();
@@ -61,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
     }
     private boolean checkContactsPermission() {
         boolean check = (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) == PackageManager.PERMISSION_GRANTED);
-        //return (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED);
-        // output: false (no PERMISSION_GRANTED)
-        // output: true (PERMISSION_GRANTED)
         System.out.println("PERMISSION GRANTED : " + check);
         return check;
     }

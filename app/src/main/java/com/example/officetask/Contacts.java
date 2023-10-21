@@ -3,44 +3,58 @@ package com.example.officetask;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
 public class Contacts extends AppCompatActivity {
+    TextView contactTextView;
+    String[] projection;
+    ArrayList<ContactObject> contactObject = new ArrayList<ContactObject>();
 
-        TextView contactList;
-        String[] projection;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.contacts);
+        //contactTextView =
+        displayContacts();
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.contacts);
+        RecyclerView recyclerView = findViewById(R.id.mRecyclerView);
+        MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(this, contactObject);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this) );
 
-            contactList = findViewById(R.id.contactList);
-            projection = new String[]{ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER};
-            displayContacts();
-        }
+        contactTextView = findViewById(R.id.contactList);
+        projection = new String[]{ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.NUMBER};
 
-        private void displayContacts() {
-            Cursor cursor = getContentResolver().query(
-                    ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                    projection,
-                    null,
-                    null,
-                    null
-            );
-            if (cursor != null) {
-                StringBuilder contactText = new StringBuilder();
-                while (cursor.moveToNext()) {
-                    String name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                    String number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                    contactText.append("Name: ").append(name).append(" Number: ").append(number).append(" ,");
-                }
-                cursor.close();
+    }
 
-                contactList.setText(contactText.toString());
+    private void displayContacts() {
+        Cursor cursor = getContentResolver().query(
+                ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                projection,
+                null,
+                null,
+                null
+        );
+
+        if (cursor != null) {
+            StringBuilder contactText = new StringBuilder();
+            while (cursor.moveToNext()) {
+                String name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                String number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                contactText.append("Name: ").append(name).append(" Number: ").append(number).append(" ,");
+
+                contactObject.add(new ContactObject(name, number, ""));
             }
+            cursor.close();
+
+            //contactTextView.setText(contactText.toString());
         }
     }
+}
+
 

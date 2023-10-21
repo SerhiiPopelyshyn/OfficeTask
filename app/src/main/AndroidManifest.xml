@@ -30,5 +30,7 @@
         </activity>
         <activity android:name=".Facebook"/>
         <activity android:name=".Contacts"/>
+        <activity android:name="ContactObject"/>
+        <activity android:name="MyRecyclerViewAdapter"/>
     </application>
 </manifest>
