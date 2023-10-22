@@ -40,6 +40,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView nameContact, numberContact, emailContact;
+
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 

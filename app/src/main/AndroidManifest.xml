@@ -32,5 +32,9 @@
         <activity android:name=".Contacts"/>
         <activity android:name="ContactObject"/>
         <activity android:name="MyRecyclerViewAdapter"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 </manifest>

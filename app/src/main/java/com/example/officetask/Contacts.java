@@ -57,6 +57,7 @@ public class Contacts extends AppCompatActivity implements RecyclerViewInterface
         }
     }
 
+
     @Override
     public void onItemClick(int position) {
         Intent intent = new Intent(Contacts.this, MainActivity.class);

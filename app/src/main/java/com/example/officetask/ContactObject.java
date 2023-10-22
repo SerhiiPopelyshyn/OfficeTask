@@ -1,6 +1,7 @@
 package com.example.officetask;
 
 public class ContactObject {
+
     String nameContact;
     String numberContact;
     String emailContact;
