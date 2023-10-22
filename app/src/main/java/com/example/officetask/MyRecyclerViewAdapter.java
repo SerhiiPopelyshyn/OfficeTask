@@ -1,7 +1,6 @@
 package com.example.officetask;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
-    private final RecyclerViewInterface recyclerViewInterface;
+    private  RecyclerViewInterface recyclerViewInterface;
     Context context;
     ArrayList<ContactObject> contactObject;
-    public MyRecyclerViewAdapter(Context context, ArrayList<ContactObject> ContactObject,
-                                 RecyclerViewInterface recyclerViewInterface){
+    public MyRecyclerViewAdapter(Context context, ArrayList<ContactObject> ContactObject){
         this.context = context;
         this.contactObject = ContactObject;
         this.recyclerViewInterface = recyclerViewInterface;
@@ -60,10 +58,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                             recyclerViewInterface.onItemClick(pos);
                         }
                     }
-
                 }
             });
-
         }
     }
 }

@@ -18,8 +18,6 @@ public class ContactObject {
     public String getNumberContact() {
         return numberContact;
     }
-    public String getEmailContact() {
-        return emailContact;
-    }
+    public String getEmailContact() {return emailContact;}
 
 }

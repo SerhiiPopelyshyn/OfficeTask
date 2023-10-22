@@ -15,11 +15,32 @@
         android:text="TextView"
         android:textStyle="bold" />
 
+    <!-- Add a TextView for displaying selected contact info -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mRecyclerView"
         android:layout_width="409dp"
         android:layout_height="729dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp" />
+
+    <Button
+        android:id="@+id/selectContactButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Contact" />
+
+    <TextView
+        android:id="@+id/contactInfoTextView"
+        android:layout_width="154dp"
+        android:layout_height="115dp"
+        android:layout_alignBottom="@+id/contactList"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="122dp"
+        android:layout_marginBottom="91dp"
+        android:text="TextView" />
+
 
 </RelativeLayout>
