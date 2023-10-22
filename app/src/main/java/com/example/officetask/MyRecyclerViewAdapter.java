@@ -1,6 +1,7 @@
 package com.example.officetask;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,14 +48,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             emailContact = itemView.findViewById(R.id.emailContact);
 
             itemView.setOnClickListener(new View.OnClickListener() {
+
                 @Override
                 public void onClick(View view) {
 
                     if(recyclerViewInterface != null){
-                        int posit = getAdapterPosition();
+                        int pos = getAdapterPosition();
 
-                        if(posit != RecyclerView.NO_POSITION){
-                            recyclerViewInterface.onItemClick(posit);
+                        if(pos != RecyclerView.NO_POSITION){
+                            recyclerViewInterface.onItemClick(pos);
                         }
                     }
 

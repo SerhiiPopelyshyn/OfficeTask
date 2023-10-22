@@ -1,5 +1,6 @@
 package com.example.officetask;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -58,6 +59,11 @@ public class Contacts extends AppCompatActivity implements RecyclerViewInterface
 
     @Override
     public void onItemClick(int position) {
+        Intent intent = new Intent(Contacts.this, MainActivity.class);
+
+        intent.putExtra("Name", contactObject.get(position).getNameContact());
+
+        startActivity(intent);
 
     }
 }

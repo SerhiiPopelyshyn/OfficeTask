@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         editText = (EditText) findViewById(R.id.editText);
 
         Button btn = (Button) findViewById(R.id.btnSearch);
+
+        Intent intent = getIntent();
+        if(intent != null){
+            if(intent.hasExtra("Name")){
+                String name = intent.getStringExtra("Name");
+                editText.setText(name);
+            }
+        }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
